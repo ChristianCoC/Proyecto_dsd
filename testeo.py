@@ -1,16 +1,84 @@
+# %%
 # Archivo para testear el funcionamiento de las librerías
 import funciones as fn
+import funciones_dos as fnd
+import pandas as pd
 
 # Testeo de la función contar_valor
-numeros = [1, 2, 2, 4, 5, 4, 7, 8, 7, 1, 1,]
+numeros = [
+    1,
+    2,
+    2,
+    4,
+    5,
+    4,
+    7,
+    8,
+    7,
+    1,
+    1,
+]
 numeroMasRepetido = fn.contar_valor(numeros, 8)
 print(numeroMasRepetido)
 
 # Testeo de la función contar_cadena
-cadenas = ['hola', 'hola', 'adios', 'hola', 'adios', 'hola', 'hola', 'adios']
-cadenaMasRepetida = fn.contar_cadena(cadenas, 'adios')
+cadenas = ["hola", "hola", "adios", "hola", "adios", "hola", "hola", "adios"]
+cadenaMasRepetida = fn.contar_cadena(cadenas, "adios")
 print(cadenaMasRepetida)
 
 # Testeo de la función calcular_edad
-edad = fn.calcular_edad('01-08-2002')
+edad = fn.calcular_edad("01-08-2002")
 print(edad)
+
+# %%
+# Testeo de la función promedio
+"""
+Creamos un DataFrame con los siguientes datos:
+Productos = ['Producto A', 'Producto B', 'Producto C', 'Producto D', 'Producto E']
+Precios = [100, 200, 300, 400, 500]
+Ventas = [10, 20, 30, 40, 50]
+"""
+promedios = pd.DataFrame(
+    [
+        ["Producto A", 100, 10],
+        ["Producto B", 200, 20],
+        ["Producto C", 300, 30],
+        ["Producto D", 400, 40],
+        ["Producto E", 500, 50],
+    ],
+    columns=["Productos", "Precios", "Ventas"],
+)
+
+print(promedios)
+# %%
+print(fnd.promedio(promedios, "Precios"))
+# %%
+print(fnd.promedio(promedios, "Ventas"))
+# %%
+# Testeo de la función contar_repeticiones
+"""
+Creamos un DataFrame de tres filas y tres columnas que tengan 
+valores repetidos para poder testear la función.
+"""
+valores_repetidos = pd.DataFrame(
+    [["Producto A", 100, 5], ["Producto A", 100, 5], ["Producto B", 200, 5]],
+    columns=["Productos", "Precios", "Ventas"],
+)
+
+print(valores_repetidos)
+# %%
+print(fnd.contar_repeticiones(valores_repetidos))
+# %%
+# Testeo de la función minusculas
+"""
+Creamos un DataFrame de dos filas y dos columnas que tengan
+todos los valores en mayúsculas para poder testear la función.
+"""
+df_mayusculas = pd.DataFrame(
+    [["PRODUCTO A", "Shampoo"], ["PRODUCTO B", "Acondicionador"]],
+    columns=["Productos", "Marcas"],
+)
+print(df_mayusculas)
+# %%
+print(fnd.minusculas(df_mayusculas))
+# %%

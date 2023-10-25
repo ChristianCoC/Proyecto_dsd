@@ -4,6 +4,10 @@
   },
   "python.formatting.provider": "none",
   "cSpell.words": [
+    "dataframe",
+    "dtype",
+    "mayusculas",
+    "minusculas",
     "numeros",
     "testear",
     "Testeo"
