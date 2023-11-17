@@ -3,6 +3,7 @@
 import funciones as fn
 import funciones_dos as fnd
 import pandas as pd
+import funciones_graficos as fng
 
 # Testeo de la función contar_valor
 numeros = [
@@ -81,4 +82,23 @@ df_mayusculas = pd.DataFrame(
 print(df_mayusculas)
 # %%
 print(fnd.minusculas(df_mayusculas))
+
 # %%
+# Creamos un dataframe para probar las funciones de graficos.
+
+df_alumnos = pd.DataFrame(
+    index=["Juan", "Ana", "Pedro", "Luis"],
+    columns=["Edad", "Altura", "Peso"],
+    data=[[20, 1.80, 70], [21, 1.75, 60], [22, 1.85, 80], [23, 1.90, 75]],
+)
+# %%
+print(df_alumnos)
+
+# %%
+fng.grafico_barras(df_alumnos, "grafico_barras", "Grafico de barras", "Nombre", "Edad")
+
+# %%
+fng.grafico_lineas(df_alumnos, "grafico_lineas", "Grafico de lineas", "Nombre", "Edad")
+
+# %%
+fng.grafico_puntos(df_alumnos, "grafico_puntos", "Grafico de puntos", "Edad", "Altura")
