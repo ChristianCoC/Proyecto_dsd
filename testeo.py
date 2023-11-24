@@ -102,3 +102,18 @@ fng.grafico_lineas(df_alumnos, "grafico_lineas", "Grafico de lineas", "Nombre", 
 
 # %%
 fng.grafico_puntos(df_alumnos, "grafico_puntos", "Grafico de puntos", "Edad", "Altura")
+
+# %%
+# Probamos las funciones de mails
+import yagmail
+import funciones_mails as fm
+
+with open("archivos/credenciales.txt", "w") as credenciales:
+    credenciales.write('colocar_mail\n')
+    credenciales.write('colocar_contrasena')
+
+mail, contrasena = fm.usuario_contrasena("archivos/credenciales.txt")
+print(mail)
+print(contrasena)
+# %%
+fm.enviar_mail(mail, contrasena, "Asunto", "Contenido", "destinatarios")
