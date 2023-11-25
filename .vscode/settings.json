@@ -4,6 +4,7 @@
   },
   "python.formatting.provider": "none",
   "cSpell.words": [
+    "contrasena",
     "dataframe",
     "dtype",
     "figsize",
@@ -12,10 +13,12 @@
     "mayusculas",
     "minusculas",
     "numeros",
+    "opcion",
     "testear",
     "Testeo",
     "xlabel",
     "xticks",
+    "yagmail",
     "ylabel"
   ]
 }
